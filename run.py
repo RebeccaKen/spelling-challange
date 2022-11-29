@@ -77,8 +77,9 @@ else:
 correct = []
 incorrect = []
 failCount = 6
+lettersGuessed = " "
 
-while True:
+while failCount > 0:
 
     print('===============================')
 
@@ -86,11 +87,36 @@ while True:
 
     if guess in secretWord:
         correct.append(guess)
-        print('Correct')
+        print(f"Correct! There is one or more {guess} in the secretWord")
     else:
         failCount -= 1
         incorrect.append(guess)
-        print('Incorrect')
+        print(f"Incorrect! There is no {guess} in the answer.")
+    
+    lettersGuessed = lettersGuessed + guess
+
+
+    def displayBoard(hangman_images, incorrect, correct, secretWord):
+        print(hangman_images[len(incorrect)])
+    print()
+
+    print('Missed Letters:', end=' ')
+    for letter in incorrect:
+        print(letter, end=' ')
+    print("\n")
+
+    blanks = '_' * len(secretWord)
+
+    for i in range(len(secretWord)):  # replace blanks with correctly guessed letters
+        if secretWord[i] in correct:
+            blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+
+    for letter in blanks:  # show the secret word with spaces in between each letter
+        print(letter, end=' ')
+    print("\n")
+
     
 
+    
+    
 
