@@ -60,9 +60,11 @@ hangman_images = ['''
         |
 ===========''']
 
-list = ['enjoy', 'honey', 'hapless', 'groan', 'statement', 'teeny', 'physical', 'wretched', 'turkey', 'trains', 'fly', 'straps']
-secretWord = random.choice(list)
 
+secretWord = random.choice(words)
+
+
+def function greeting():
 
 # Welcome messages
 name = input ('Welcome to Hangman. Please enter your player name:' )
@@ -79,6 +81,7 @@ incorrect = []
 failCount = 6
 lettersGuessed = " "
 
+
 while failCount > 0:
 
     print('===============================')
@@ -94,6 +97,8 @@ while failCount > 0:
         print(f"Incorrect! There is no {guess} in the answer.")
     
     lettersGuessed = lettersGuessed + guess
+
+
 
 
     def displayBoard(hangman_images, incorrect, correct, secretWord):

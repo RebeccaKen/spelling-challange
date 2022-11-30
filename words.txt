@@ -1,0 +1,7 @@
+
+"""
+A list of words that our ten letters each. This list will be called to provide a the secret word for each round of hangman.
+"""
+
+Words = ['domination', 'leadership', 'foundation', 'experience', 'hemisphere', 'reputation', 'indication', 'occupation', 'innovation', 'wilderness']
+
