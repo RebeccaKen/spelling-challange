@@ -86,18 +86,27 @@ while True:
     else:
         print('This game is recommended for children of 8+!')
 
-"""
 
 """
+This function will welcome the player.
+Then it will collect their name as an input.
 
-def get_player_name():
-    name = input('Welcome to Hangman. Please enter your player name:' )
-    return name 
+"""
 
-player_name = get_player_name
+def get_name():
+    response = input('Welcome to hangman. Please enter your name:')
+    return response
+
+name = get_name()
 
 
-
+if name.isalpha():
+    print(f"Hello {name} it's nice to meet you" + "!")
+    print('Welcome to Hangman. Ready to swing?')
+elif name.isdigit():
+    print('Sorry, you can only to use letters only to spell your player name!')
+else:
+    print('You cannot use any special characters in player name.')
 
 
 
