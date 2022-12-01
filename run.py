@@ -7,65 +7,6 @@ with open("list.txt", "r") as new_list:
 
 secretWord = random.choice(words)
 
-hangman_images = ['''
-    +---+    
-    |   |
-        |
-        |
-        |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-        |
-        |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-    |   |
-        |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-   /|   |
-        |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-   /|\  |
-        |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-   /|\  |
-   /    |
-        |
-        |
-===========''', '''
-    +---+    
-    |   |
-    O   |
-   /|\  |
-   / \  |
-        |
-        |
-===========''']
-
-
 """
 This function will collect the player's age.
 It then validates their input.
@@ -96,6 +37,7 @@ def get_name():
 
 name = get_name()
 
+# This input validation method will be used to assure the player's name is in letters
 
 if name.isalpha():
     print(f"Hello {name} it's nice to meet you" + "!")
@@ -108,7 +50,7 @@ else:
 
 correct = []
 incorrect = []
-failCount = 12
+failCount = 6
 lettersGuessed = " "
 run_game = " "
 gameOver = False
@@ -133,52 +75,20 @@ while failCount > 0:
         failCount -= 1
         incorrect.append(guess)
         print(f"Incorrect! There is no {guess} in the answer.")
-    
-    lettersGuessed = lettersGuessed + guess
-    wrongLetterCount = 0
 
+"""
 
-    def displayBoard(hangman_images, incorrect, correct, secretWord):
-        print(hangman_images[len(incorrect)])
-    print()
-
-    print('Missed Letters:', end=' ')
-    for letter in incorrect:
-        print(letter, end=' ')
-    print("\n")
-
-    blanks = '_' * len(secretWord)
-
-    for i in range(len(secretWord)):  # replace blanks with correctly guessed letters
-        if secretWord[i] in correct:
-            blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
-
-    for letter in blanks:  # show the secret word with spaces in between each letter
-        print(letter, end=' ')
-    print("\n")
-
-
-while True:
-    displayBoard(incorrect, correct, secretWord)
-    
-    # Let the player enter a letter. 
-    guess = getGuess(incorrect + correct)
-    
-    if guess in secretWord:
-        correct = correct + guess
-
-# Check if the player has won.
-
-    foundAllLetters = True
-    for i in range(len(secretWord))
-    if secretWord[i] not in correct:
-        foundAllLetters = False
-        break
-    if foundAllLetters:
-        print('Yes! The secret word is "'+ secretWord +'"! You have won!')
-        gameIsDone = True
-    else:
-        incorrect = incorrect + guess
+"""
+def letterBlanks(secretWord):
+    display_word = ''
+    for letter in secretWord:
+        if correct(letter) > -1:
+            # letter found
+            display_word = display_word + letter
+        else:
+            # letter not found
+            display_word = display_word + '-'
+            print(display_word)
 
     
 def playGame():
