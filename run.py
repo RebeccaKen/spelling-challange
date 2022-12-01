@@ -1,6 +1,5 @@
 import random
 
-# Constants
 
 hangman_images = ['''
     +---+    
@@ -61,24 +60,38 @@ hangman_images = ['''
 ===========''']
 
 
+
+"""
+
+""" 
+
+words = ['domination', 'leadership', 'foundation', 'experience', 'hemisphere', 'reputation', 'indication', 'occupation', 'innovation', 'wilderness']
 secretWord = random.choice(words)
 
 
-def function greeting():
 
-# Welcome messages
-name = input ('Welcome to Hangman. Please enter your player name:' )
-if name.isalpha():
-    print("Hello " + name + " it's nice to meet you" + "!")
-    print('Welcome to Hangman. Ready to swing?')
-elif name.isdigit():
-    print('Sorry, you can only to use letters only to spell your player name! Try again')
-else:
-    print('You cannot use any special characters in player name.')
+
+
+"""
+This function will collect the player's name.
+It will then validate their input.
+"""
+while True:
+    try:
+        num = int(input("Enter you age: "))
+    except ValueError:
+        print("Please enter a valid number")
+        continue
+    if num >= 1 and num <= 10:
+        print(f'You entered: {num}')
+        break
+    else:
+        print('You must be between one and ten')
+
 
 correct = []
 incorrect = []
-failCount = 6
+failCount = 10
 lettersGuessed = " "
 
 
@@ -120,6 +133,8 @@ while failCount > 0:
         print(letter, end=' ')
     print("\n")
 
+
+    
     
 
     
