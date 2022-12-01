@@ -90,7 +90,6 @@ while True:
 """
 This function will welcome the player.
 Then it will collect their name as an input.
-
 """
 
 def get_name():
@@ -109,11 +108,17 @@ else:
     print('You cannot use any special characters in player name.')
 
 
-
 correct = []
 incorrect = []
 failCount = 10
 lettersGuessed = " "
+run_game = " "
+
+
+"""
+The following code was created using the tutorial 
+'How to Build a Hangman Game with Python' by CBT Nuggets.
+"""
 
 
 while failCount > 0:
@@ -155,8 +160,17 @@ while failCount > 0:
     print("\n")
 
 
-    
-    
+
+def play_game():
+    global run_game
+    play_game = input("Do You want to play again? y = yes, n = no \n")
+    while play_game not in ["y", "n","Y","N"]:
+        play_game = input("Do You want to play again? y = yes, n = no \n")
+    if play_game == "y":
+        main()
+    elif play_game == "n":
+        print("Thanks For Playing! We expect you back again!")
+        exit()
 
     
     
