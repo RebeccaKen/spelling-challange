@@ -1,9 +1,12 @@
-f = open("words.txt", "r")
-
-"""
-A list of words that are ten letters each. This list will be called to provide a the secret word for each round of hangman.
-"""
-
-words = ['domination', 'leadership', 'foundation', 'experience', 'hemisphere', 'reputation', 'indication', 'occupation', 'innovation', 'wilderness']
+domination
+leadership
+foundation
+experience 
+hemisphere 
+reputation
+indication 
+occupation
+innovation
+wilderness
 
 

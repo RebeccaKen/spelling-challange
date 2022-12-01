@@ -1,5 +1,11 @@
 import random
 
+# f = open("list.txt", "r")
+# secretWord = random.choice(words)
+with open("list.txt", "r") as new_list:
+    words = [item.replace("\n", "") for item in new_list.readlines()]
+
+secretWord = random.choice(words)
 
 hangman_images = ['''
     +---+    
@@ -60,33 +66,38 @@ hangman_images = ['''
 ===========''']
 
 
+"""
+This function will collect the player's age.
+It then validates their input.
 
 """
 
-""" 
-
-words = ['domination', 'leadership', 'foundation', 'experience', 'hemisphere', 'reputation', 'indication', 'occupation', 'innovation', 'wilderness']
-secretWord = random.choice(words)
 
 
-
-
-
-"""
-This function will collect the player's name.
-It will then validate their input.
-"""
 while True:
     try:
-        num = int(input("Enter you age: "))
+        num = int(input("Please enter your age: "))
     except ValueError:
         print("Please enter a valid number")
         continue
-    if num >= 1 and num <= 10:
+    if num >= 8 and num <= 11:
         print(f'You entered: {num}')
         break
     else:
-        print('You must be between one and ten')
+        print('This game is recommended for children of 8+!')
+
+
+
+name = input('Welcome to Hangman. Please enter your player name:' )
+if name.isalpha():
+    print(f"Hello {name} it's nice to meet you" + "!")
+    print('Welcome to Hangman. Ready to swing?')
+elif name.isdigit():
+    print('Sorry, you can only to use letters only to spell your player name! Try again')
+else:
+    print('You cannot use any special characters in player name.')
+
+
 
 
 correct = []
