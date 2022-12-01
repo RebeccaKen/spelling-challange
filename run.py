@@ -72,8 +72,6 @@ It then validates their input.
 
 """
 
-
-
 while True:
     try:
         num = int(input("Please enter your age: "))
@@ -110,9 +108,10 @@ else:
 
 correct = []
 incorrect = []
-failCount = 10
+failCount = 12
 lettersGuessed = " "
 run_game = " "
+gameOver = False
 
 
 """
@@ -136,8 +135,7 @@ while failCount > 0:
         print(f"Incorrect! There is no {guess} in the answer.")
     
     lettersGuessed = lettersGuessed + guess
-
-
+    wrongLetterCount = 0
 
 
     def displayBoard(hangman_images, incorrect, correct, secretWord):
@@ -160,17 +158,41 @@ while failCount > 0:
     print("\n")
 
 
+while True:
+    displayBoard(incorrect, correct, secretWord)
+    
+    # Let the player enter a letter. 
+    guess = getGuess(incorrect + correct)
+    
+    if guess in secretWord:
+        correct = correct + guess
 
-def play_game():
-    global run_game
-    play_game = input("Do You want to play again? y = yes, n = no \n")
-    while play_game not in ["y", "n","Y","N"]:
-        play_game = input("Do You want to play again? y = yes, n = no \n")
-    if play_game == "y":
+# Check if the player has won.
+
+    foundAllLetters = True
+    for i in range(len(secretWord))
+    if secretWord[i] not in correct:
+        foundAllLetters = False
+        break
+    if foundAllLetters:
+        print('Yes! The secret word is "'+ secretWord +'"! You have won!')
+        gameIsDone = True
+    else:
+        incorrect = incorrect + guess
+
+    
+def playGame():
+    global runGame
+    playGame = input("Do You want to play again? y = yes, n = no \n")
+    while playGame not in ["y", "n","Y","N"]:
+        playGame = input("Do You want to play again? y = yes, n = no \n")
+    if playGame == "y":
         main()
-    elif play_game == "n":
+    elif playGame == "n":
         print("Thanks For Playing! We expect you back again!")
         exit()
+
+
 
     
     
