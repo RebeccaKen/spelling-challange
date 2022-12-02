@@ -28,8 +28,7 @@ while True:
 
 
 """
-This function will welcome the player.
-Then it will collect their name as an input.
+Function to welcome the player and collect their name as an input.
 """
 
 def get_name():
@@ -51,8 +50,10 @@ else:
 
 correct = []
 incorrect = []
-failCount = 9
+failCount = 12
 lettersGuessed = ""
+gameIsDone = False
+
 
 
 """
@@ -85,17 +86,12 @@ while failCount > 0:
             print("_", end="")
             failCount += 1
 
-    if failCount == 0:
-        print(f"Congrats! The answer was {secretWord}")
-        break
-    # Ask the player if they want to play again (but only if the game is done).
-    else:
-        print("Sorry! Maybe next time you will win!")
-        play_again = input("If you'd like to play again, please type 'y'")
-    if play_again == "y":
-        continue
-    else:
-        print('Okay, bye!')
-        break
+    if lettersGuessed == secretWord:
+        print('You won!')
+
+
     
+
+
+
 
