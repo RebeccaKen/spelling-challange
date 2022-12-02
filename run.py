@@ -98,6 +98,35 @@ while failCount > 0:
 
     letter_blanks(secretWord)
 
+
+while True:
+    gamer_view(correct, incorrect, secretWord)
+
+    guess = getGuess(incorrect + correct)
+
+    if guess in secretWord: 
+        correct = correct + guess 
+
+        foundAllLetters = True 
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correct:
+                foundAllLetters = False
+                break 
+            if foundAllLetters: 
+                print("Congratulations, you guessed the answer!")
+                gameOver = True
+    else:
+        incorrect = incorrect + guess
+
+        if len(incorrect) == len(hangman_image) -1:
+            gamer_view(incorrect, correct, secretWord)
+            print("You have no more guesses!/nThe answer was "' + secretWord + '"")
+            gameOver = True
+            
+
+
+
+
     
 def playGame():
     global runGame
