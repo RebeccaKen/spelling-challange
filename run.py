@@ -6,24 +6,6 @@ with open("list.txt", "r") as new_list:
     words = [item.replace("\n", "") for item in new_list.readlines()]
 
 secretWord = random.choice(words)
-print(secretWord)
-
-
-"""
-This function will create a blank space for letters that have not been 
-guessed yet.
-"""
-
-def letter_blanks(secretWord):
-    display_word = ''
-    for letter in correct:
-        if letter in secretWord:
-            # letter found
-            display_word = display_word + guess
-        else:
-            # letter not found
-            display_word = display_word + '-'
-    print(display_word)
 
 
 """
@@ -70,10 +52,9 @@ else:
 correct = []
 incorrect = []
 failCount = 6
-lettersGuessed = " "
+lettersGuessed = ""
 run_game = " "
 gameOver = False
-
 
 """
 The following code was created using the tutorial 
@@ -95,34 +76,24 @@ while failCount > 0:
         incorrect.append(guess)
         print(f"Incorrect! There is no {guess} in the answer.")
 
+    lettersGuessed = lettersGuessed + guess
+    failCount = 0
 
-    letter_blanks(secretWord)
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            print(f"{letter}", end="")
+        else:
+            print("_", end="")
+            failCount += 1
+
+    if failCount == 0:
+        print(f"Congrats! The answer was {secretWord}")
+        break
+
+else:
+    print("Sorry! Maybe next time you will win!")
 
 
-while True:
-    gamer_view(correct, incorrect, secretWord)
-
-    guess = getGuess(incorrect + correct)
-
-    if guess in secretWord: 
-        correct = correct + guess 
-
-        foundAllLetters = True 
-        for i in range(len(secretWord)):
-            if secretWord[i] not in correct:
-                foundAllLetters = False
-                break 
-            if foundAllLetters: 
-                print("Congratulations, you guessed the answer!")
-                gameOver = True
-    else:
-        incorrect = incorrect + guess
-
-        if len(incorrect) == len(hangman_image) -1:
-            gamer_view(incorrect, correct, secretWord)
-            print("You have no more guesses!/nThe answer was "' + secretWord + '"")
-            gameOver = True
-            
 
 
 
