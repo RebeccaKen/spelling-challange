@@ -51,10 +51,9 @@ else:
 
 correct = []
 incorrect = []
-failCount = 6
+failCount = 9
 lettersGuessed = ""
-run_game = " "
-gameOver = False
+
 
 """
 The following code was created using the tutorial 
@@ -89,29 +88,14 @@ while failCount > 0:
     if failCount == 0:
         print(f"Congrats! The answer was {secretWord}")
         break
-
-else:
-    print("Sorry! Maybe next time you will win!")
-
-
-
-
-
-
-    
-def playGame():
-    global runGame
-    playGame = input("Do You want to play again? y = yes, n = no \n")
-    while playGame not in ["y", "n","Y","N"]:
-        playGame = input("Do You want to play again? y = yes, n = no \n")
-    if playGame == "y":
-        main()
-    elif playGame == "n":
-        print("Thanks For Playing! We expect you back again!")
-        exit()
-
-
-
-    
+    # Ask the player if they want to play again (but only if the game is done).
+    else:
+        print("Sorry! Maybe next time you will win!")
+        play_again = input("If you'd like to play again, please type 'y'")
+    if play_again == "y":
+        continue
+    else:
+        print('Okay, bye!')
+        break
     
 
