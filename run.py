@@ -6,6 +6,25 @@ with open("list.txt", "r") as new_list:
     words = [item.replace("\n", "") for item in new_list.readlines()]
 
 secretWord = random.choice(words)
+print(secretWord)
+
+
+"""
+This function will create a blank space for letters that have not been 
+guessed yet.
+"""
+
+def letter_blanks(secretWord):
+    display_word = ''
+    for letter in correct:
+        if letter in secretWord:
+            # letter found
+            display_word = display_word + guess
+        else:
+            # letter not found
+            display_word = display_word + '-'
+    print(display_word)
+
 
 """
 This function will collect the player's age.
@@ -76,19 +95,8 @@ while failCount > 0:
         incorrect.append(guess)
         print(f"Incorrect! There is no {guess} in the answer.")
 
-"""
 
-"""
-def letterBlanks(secretWord):
-    display_word = ''
-    for letter in secretWord:
-        if correct(letter) > -1:
-            # letter found
-            display_word = display_word + letter
-        else:
-            # letter not found
-            display_word = display_word + '-'
-            print(display_word)
+    letter_blanks(secretWord)
 
     
 def playGame():
