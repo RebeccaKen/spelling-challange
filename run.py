@@ -1,7 +1,6 @@
 import random
 
-# f = open("list.txt", "r")
-# secretWord = random.choice(words)
+# Code to connect run.py to word list in list.txt
 with open("list.txt", "r") as new_list:
     words = [item.replace("\n", "") for item in new_list.readlines()]
 
@@ -9,8 +8,10 @@ secretWord = random.choice(words)
 
 
 """
-This function will collect the player's age.
+This try/except statement will collect the player's age.
 It then validates their input.
+If the player is not between 8-11 a message will appear to 
+clarify the recommended player age.
 
 """
 
@@ -24,24 +25,23 @@ while True:
         print(f'You entered: {num}')
         break
     else:
-        print('This game is recommended for children of 8+!')
+        print('This game is recommended for children age 8 - 11!')
 
-
-"""
-Function to welcome the player and collect their name as an input.
-"""
 
 def get_name():
+    '''This Function to welcome the player and collect their name as an input.'''
     response = input('Welcome to hangman. Please enter your name:')
     return response
 
+
 name = get_name()
+
 
 # This input validation method will be used to assure the player's name is in letters
 
 if name.isalpha():
     print(f"Hello {name} it's nice to meet you" + "!")
-    print('Welcome to Hangman. Ready to swing?')
+    print('Welcome to Spelling Challange. Ready to go?')
 elif name.isdigit():
     print('Sorry, you can only to use letters only to spell your player name!')
 else:
@@ -54,12 +54,12 @@ failCount = 12
 lettersGuessed = ""
 gameIsDone = False
 
+#The playAgain function could was built using '8 - Writing Hangman code' on www.inventwithpython.com
+
 def playAgain():
-    # This function returns True if the player wants to play again;otherwise, it returns False.
-    print('Do you want to play again? (yes or no)')
+    """This function returns True if the player wants to play again;otherwise, it returns False."""
+    print('Do you want to play Spelling Challange again? (yes or no)')
     return input().lower().startswith('y')
-
-
 
 """
 The following code was created using the tutorial 
@@ -95,7 +95,6 @@ while failCount > 0:
     if len(correct) == len(secretWord):
         gameIsDone = True
         print('You won!')
-
     
     # Check if player has guessed too many times and lost.
     if len(incorrect) == len(secretWord) - 1:
