@@ -17,7 +17,7 @@ will appear to clarify the recommended player age.
 
 while True:
     try:
-        num = int(input("Please enter your age:/n"))
+        num = int(input("Please enter your age:\n"))
     except ValueError:
         print("Please enter a valid number")
         continue
@@ -30,7 +30,7 @@ while True:
 
 def get_Name():
     '''This welcome Function collects player's name as an input.'''
-    response = input("Welcome to hangman. Please enter your name:/n")
+    response = input("Welcome to hangman. Please enter your name:\n")
     return response
 
 
