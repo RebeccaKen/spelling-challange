@@ -10,8 +10,8 @@ secretWord = random.choice(words)
 """
 This try/except statement will collect the player's age.
 It then validates their input.
-If the player is not between 8-11 a message will appear to 
-clarify the recommended player age.
+If the player is not between 8-11 a message
+will appear to clarify the recommended player age.
 
 """
 
@@ -28,13 +28,13 @@ while True:
         print("This game is recommended for children age 8 - 11!")
 
 
-def getName():
-    '''This Function to welcome the player and collect their name as an input.'''
+def get_Name():
+    '''This welcome Function collects player's name as an input.'''
     response = input("Welcome to hangman. Please enter your name:")
     return response
 
 
-name = getName()
+name = get_Name()
 
 
 # Input validation method will be used to assure the player's name uses letters
@@ -50,24 +50,27 @@ else:
 
 correct = []
 incorrect = []
-failCount = 12
-lettersGuessed = ""
-gameIsDone = False
+fail_Count = 12
+letters_Guessed = ""
+game_Done = False
 
-# The playAgain function was built using '8 - Writing Hangman code' on www.inventwithpython.com
+"""
+The playAgain function was built using
+'8 - Writing Hangman code' on www.inventwithpython.com
+"""
 
-def playAgain():
-    """This function returns True if the player wants to play again;otherwise, it returns False."""
+
+def play_Again():
+    """Function returns True if the player wants to play again."""
     print('Do you want to play Spelling Challange again? (yes or no)')
     return input().lower().startswith('y')
 
-"""
-The following code was created using the tutorial 
-'How to Build a Hangman Game with Python' by CBT Nuggets.
-"""
+
+# The following code was created using the tutorial
+# 'How to Build a Hangman Game with Python' by CBT Nuggets.
 
 
-while failCount > 0:
+while fail_Count > 0:
 
     print("===============================")
 
@@ -77,44 +80,37 @@ while failCount > 0:
         correct.append(guess)
         print(f"Correct! There is one or more {guess} in the secretWord")
     else:
-        failCount -= 1
+        fail_Count -= 1
         incorrect.append(guess)
         print(f"Incorrect! There is no {guess} in the answer.")
 
-    lettersGuessed = lettersGuessed + guess
-    failCount = 0
+    letters_Guessed = letters_Guessed + guess
+    fail_Count = 0
 
     for letter in secretWord:
-        if letter in lettersGuessed:
+        if letter in letters_Guessed:
             print(f"{letter}", end="")
         else:
             print("_", end="")
-            failCount += 1
-    
+            fail_Count += 1
+
     # Check if player's guesses are all correct.
     print(correct)
     if len(correct) == len(secretWord):
-        gameIsDone = True
+        game_Done = True
         print("You won!")
-    
+
     # Check if player has guessed too many times and lost.
     if len(incorrect) == len(secretWord) - 1:
         print(f"You've run out of guesses. The answer was {secretWord}")
-        gameIsDone = True
-        
-    # Ask the player if they want to play again (but only if the game is done).
+        game_Done = True
 
-    if gameIsDone:
-        if playAgain():
-            missedLetters = ''
-            correctLetters = ''
-            gameIsDone = True
+    # Ask the player if they want to play again (but only if the game is done).
+    if game_Done:
+        if play_Again():
+            missed_Letters = ''
+            correct_Letters = ''
+            game_Done = True
             secretWord = random.choice(words)
         else:
             print("we are here")
-
-    
-
-
-
-
