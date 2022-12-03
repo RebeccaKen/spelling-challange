@@ -90,7 +90,8 @@ while failCount > 0:
         else:
             print("_", end="")
             failCount += 1
-
+    
+    # Check if player's guesses are all correct.
     print(correct)
     if len(correct) == len(secretWord):
         gameIsDone = True
@@ -108,6 +109,7 @@ while failCount > 0:
             missedLetters = ''
             correctLetters = ''
             gameIsDone = False
+            secretWord = random.choice(words)
         else:
             print("we are here")
 
