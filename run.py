@@ -1,6 +1,6 @@
 import random
 
-# Code to connect run.py to word list in list.txt
+# Code to connect run.py to word list in list.txt for use in secretWord
 with open("list.txt", "r") as new_list:
     words = [item.replace("\n", "") for item in new_list.readlines()]
 
@@ -25,27 +25,27 @@ while True:
         print(f'You entered: {num}')
         break
     else:
-        print('This game is recommended for children age 8 - 11!')
+        print("This game is recommended for children age 8 - 11!")
 
 
-def get_name():
+def getName():
     '''This Function to welcome the player and collect their name as an input.'''
-    response = input('Welcome to hangman. Please enter your name:')
+    response = input("Welcome to hangman. Please enter your name:")
     return response
 
 
-name = get_name()
+name = getName()
 
 
-# This input validation method will be used to assure the player's name is in letters
+# Input validation method will be used to assure the player's name uses letters
 
 if name.isalpha():
     print(f"Hello {name} it's nice to meet you" + "!")
-    print('Welcome to Spelling Challange. Ready to go?')
+    print("Welcome to Spelling Challange. Ready to go?")
 elif name.isdigit():
-    print('Sorry, you can only to use letters only to spell your player name!')
+    print("Sorry, you can only to use letters only to spell your player name!")
 else:
-    print('You cannot use any special characters in player name.')
+    print("You cannot use any special characters in player name.")
 
 
 correct = []
@@ -54,7 +54,7 @@ failCount = 12
 lettersGuessed = ""
 gameIsDone = False
 
-#The playAgain function could was built using '8 - Writing Hangman code' on www.inventwithpython.com
+# The playAgain function was built using '8 - Writing Hangman code' on www.inventwithpython.com
 
 def playAgain():
     """This function returns True if the player wants to play again;otherwise, it returns False."""
@@ -69,9 +69,9 @@ The following code was created using the tutorial
 
 while failCount > 0:
 
-    print('===============================')
+    print("===============================")
 
-    guess = input('Please enter a letter:')
+    guess = input("Please enter a letter:")
 
     if guess in secretWord:
         correct.append(guess)
@@ -95,7 +95,7 @@ while failCount > 0:
     print(correct)
     if len(correct) == len(secretWord):
         gameIsDone = True
-        print('You won!')
+        print("You won!")
     
     # Check if player has guessed too many times and lost.
     if len(incorrect) == len(secretWord) - 1:
@@ -108,7 +108,7 @@ while failCount > 0:
         if playAgain():
             missedLetters = ''
             correctLetters = ''
-            gameIsDone = False
+            gameIsDone = True
             secretWord = random.choice(words)
         else:
             print("we are here")
