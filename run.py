@@ -17,7 +17,7 @@ will appear to clarify the recommended player age.
 
 while True:
     try:
-        num = int(input("Please enter your age: "))
+        num = int(input("Please enter your age:/n"))
     except ValueError:
         print("Please enter a valid number")
         continue
@@ -30,7 +30,7 @@ while True:
 
 def get_Name():
     '''This welcome Function collects player's name as an input.'''
-    response = input("Welcome to hangman. Please enter your name:")
+    response = input("Welcome to hangman. Please enter your name:/n")
     return response
 
 
@@ -38,7 +38,6 @@ name = get_Name()
 
 
 # Input validation method will be used to assure the player's name uses letters
-
 if name.isalpha():
     print(f"Hello {name} it's nice to meet you" + "!")
     print("Welcome to Spelling Challange. Ready to go?")
