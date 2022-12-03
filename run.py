@@ -54,6 +54,11 @@ failCount = 12
 lettersGuessed = ""
 gameIsDone = False
 
+def playAgain():
+    # This function returns True if the player wants to play again;otherwise, it returns False.
+    print('Do you want to play again? (yes or no)')
+    return input().lower().startswith('y')
+
 
 
 """
@@ -86,9 +91,26 @@ while failCount > 0:
             print("_", end="")
             failCount += 1
 
-    if lettersGuessed == secretWord:
+    print(correct)
+    if len(correct) == len(secretWord):
+        gameIsDone = True
         print('You won!')
 
+    
+    # Check if player has guessed too many times and lost.
+    if len(incorrect) == len(secretWord) - 1:
+        print(f"You've run out of guesses. The answer was {secretWord}")
+        gameIsDone = True
+        
+    # Ask the player if they want to play again (but only if the game is done).
+
+    if gameIsDone:
+        if playAgain():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsDone = False
+        else:
+            print("we are here")
 
     
 
