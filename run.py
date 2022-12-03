@@ -49,7 +49,7 @@ else:
 
 correct = []
 incorrect = []
-fail_Count = 8
+fail_Count = 6
 letters_Guessed = ""
 game_Done = False
 
