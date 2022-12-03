@@ -30,7 +30,7 @@ while True:
 
 def get_Name():
     '''This welcome Function collects player's name as an input.'''
-    response = input("Welcome to hangman. Please enter your name:\n")
+    response = input("Welcome to Spelling Challange!Please enter your name:\n")
     return response
 
 
@@ -40,7 +40,7 @@ name = get_Name()
 # Input validation method will be used to assure the player's name uses letters
 if name.isalpha():
     print(f"Hello {name} it's nice to meet you" + "!")
-    print("Welcome to Spelling Challange. Ready to go?")
+    print("Ready to go?")
 elif name.isdigit():
     print("Sorry, you can only to use letters only to spell your player name!")
 else:
