@@ -44,10 +44,9 @@ def main():
     else:
         print("You cannot use any special characters in player name.")
 
-
     correct = []
     incorrect = []
-    fail_Count = 8
+    fail_Count = 7
     letters_Guessed = " "
     game_Done = True
 
@@ -64,8 +63,8 @@ def main():
         if guess in secretWord:
             correct.append(guess)
             print(f"Correct! There is one or more {guess} in the answer")
-        else:
             fail_Count -= 1
+        else:
             incorrect.append(guess)
             print(f"Incorrect! There is no {guess} in the answer.")
 
@@ -75,21 +74,24 @@ def main():
         for letter in secretWord:
             if letter in letters_Guessed:
                 print(f"{letter}", end=" ")
-            else:
+            if letter not in letters_Guessed:
                 print("_", end=" ")
                 fail_Count += 1
 
             # Check if player's guesses are all correct.
             if len(correct) == len(secretWord):
                 print(f"You won! The answer was {secretWord}")
+                print("=====================================")
                 game_Done = True
                 break
             # Check if player has guessed too many times and lost.
             if len(incorrect) == len(secretWord) - 1:
                 print(f"You've run out of guesses. Answer = {secretWord}")
+                print("===================================================")
                 game_Done = True
                 break
 
+    # Restart game if user chooses to do so using main()
     restart = input("Start again? y for Yes, n for NO: ")
     if restart == ("y"):
         incorrect = []
@@ -98,7 +100,4 @@ def main():
     else:
         quit()
 
-
 main()
-
-
