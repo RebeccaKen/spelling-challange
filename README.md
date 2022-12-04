@@ -13,6 +13,12 @@
 <h2><u>Features</u></h2>
 <h3>Existing Features</h3>
 <h2><u>Design</u></h2>
+
+<img src="assets/images/flow-chart-1.jpg" alt="An-image-of-the-spelling-challange-flowchart">
+
+<img src="assets/images/flow-chart-2.jpg" alt="A-second-image-of-the-spelling-challange-flowchart">
+
+
 <h2><u>Technologies</u></h2>
 <h2><u>Testing</u></h2>
 

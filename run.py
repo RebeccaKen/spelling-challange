@@ -61,7 +61,7 @@ The playAgain function was built using
 
 def play_Again():
     """Function returns True if the player wants to play again."""
-    print('Do you want to play Spelling Challange again? (yes or no)')
+    print("Do you want to play Spelling Challange again? (yes or no)")
     return input().lower().startswith('y')
 
 
@@ -112,4 +112,4 @@ while fail_Count > 0:
             game_Done = True
             secretWord = random.choice(words)
         else:
-            print("we are here")
+            print("Bye!")
