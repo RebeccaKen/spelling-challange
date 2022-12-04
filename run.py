@@ -6,13 +6,11 @@ with open("list.txt", "r") as new_list:
 
 secretWord = random.choice(words)
 
-
 """
 This try/except statement will collect the player's age.
 It then validates their input.
 If the player is not between 8-11 a message
 will appear to clarify the recommended player age.
-
 """
 
 while True:
@@ -33,9 +31,7 @@ def get_Name():
     response = input("Welcome to Spelling Challange!Please enter your name:\n")
     return response
 
-
 name = get_Name()
-
 
 # Input validation method will be used to assure the player's name uses letters
 if name.isalpha():
@@ -49,24 +45,18 @@ else:
 
 correct = []
 incorrect = []
-fail_Count = 6
-letters_Guessed = ""
-game_Done = False
+fail_Count = 8
+letters_Guessed = " "
+game_Done = True
 
-"""
-The playAgain function was built using
-'8 - Writing Hangman code' on www.inventwithpython.com
-"""
 
+# The following code was created using the tutorial
+# 'How to Build a Hangman Game with Python' by CBT Nuggets.
 
 def play_Again():
     """Function returns True if the player wants to play again."""
     print("Do you want to play Spelling Challange again? (yes or no)")
     return input().lower().startswith('y')
-
-
-# The following code was created using the tutorial
-# 'How to Build a Hangman Game with Python' by CBT Nuggets.
 
 
 while fail_Count > 0:
@@ -88,28 +78,16 @@ while fail_Count > 0:
 
     for letter in secretWord:
         if letter in letters_Guessed:
-            print(f"{letter}", end="")
+            print(f"{letter}", end=" ")
         else:
-            print("_", end="")
+            print("_", end=" ")
             fail_Count += 1
 
-    # Check if player's guesses are all correct.
-    print(correct)
-    if len(correct) == len(secretWord):
-        game_Done = True
-        print("You won!")
-
-    # Check if player has guessed too many times and lost.
-    if len(incorrect) == len(secretWord) - 1:
-        print(f"You've run out of guesses. The answer was {secretWord}")
-        game_Done = True
-
-    # Ask the player if they want to play again (but only if the game is done).
-    if game_Done:
-        if play_Again():
-            missed_Letters = ''
-            correct_Letters = ''
-            game_Done = True
-            secretWord = random.choice(words)
-        else:
-            print("Bye!")
+            # Check if player's guesses are all correct.
+        if len(correct) == len(secretWord):
+            print("You won!")
+            break
+        # Check if player has guessed too many times and lost.
+        if len(incorrect) == len(secretWord) - 1:
+            print(f"You've run out of guesses. Answer = {secretWord}")
+            break
