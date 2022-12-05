@@ -49,7 +49,7 @@ def main():
     letters_Guessed = " "
     game_Done = True
 
-    # The following code was created using the tutorial
+    # The following while loop code was created using the tutorial
     # 'How to Build a Hangman Game with Python' by CBT Nuggets.
 
     while fail_Count > 0:
