@@ -45,18 +45,18 @@ def main():
 
         except ValueError:
             print("Please enter a number")
-        
+
     correct = []
     incorrect = []
-    game_Done = True
-    fail_Count = 0
-    letters_Guessed = ' '
+    game_done = True
+    fail_count = 0
+    letters_guessed = ' '
     guess = ' '
 
     # The following while loop code was created using the tutorial
     # 'How to Build a Hangman Game with Python' by CBT Nuggets.
 
-    while fail_Count < 10:
+    while fail_count < 10:
 
         print("===============================")
 
@@ -68,26 +68,26 @@ def main():
         if guess not in secretWord:
             incorrect.append(guess)
             print(f"Incorrect! There is no {guess} in the answer.")
-            fail_Count += 1
+            fail_count += 1
 
-        letters_Guessed += guess
+        letters_guessed += guess
 
         for letter in secretWord:
-            if letter in letters_Guessed:
+            if letter in letters_guessed:
                 print(f"{letter}", end=" ")
-            if letter not in letters_Guessed:
+            if letter not in letters_guessed:
                 print("_", end=" ")
 
     # Check if player's guesses are all correct.
             if len(correct) == len(secretWord):
                 print(f"You won! The answer was {secretWord}")
                 print("=====================================")
-                game_Done = True
+                game_done = True
                 break
-            elif fail_Count == 10:
+            elif fail_count == 10:
                 print(f"You've run out of guesses. Answer = {secretWord}")
                 print("===================================================")
-                game_Done = True
+                game_done = True
                 break
 
 # Restart game if user chooses to do so using main()
