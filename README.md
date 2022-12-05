@@ -31,11 +31,21 @@
 <br>
 <img src="assets/images/validation-feature.jpg" alt="An-image-of-the-guess-validator-feature">
 <br>
-<p>The Correct/Incorrect tells the player if their guess was correct or incorrect. If correct, their guess is added to a list in the terminal</p>
+<p>The Correct/Incorrect tells the player if their guess was correct or incorrect. If correct, their guess is added to a list in the terminal.</p>
 <br>
-
-
-
+<b>Winner/Restart</b>
+<br>
+<img src="assets/images/win-restart.jpg" alt="An-image-of-the-winner-restart-feature">
+<br>
+<p>The winner feature tells the player if they have won</p>
+<p>The restart feature starts the game again if the player presses 'y'. If they don't press 'y', the game quits.</p>
+br>
+<b>Lose/Restart</b>
+<br>
+<img src="assets/images/lose-restart.jpg" alt="An-image-of-the-lose-restart-feature">
+<br>
+<p>The winner feature tells the player if they have lost</p>
+<p>The restart feature starts the game again if the player presses 'y'. If they don't press 'y', the game quits.</p>
 
 
 <h2><u>Design</u></h2>
@@ -127,11 +137,22 @@
 <br>
 
 <h2><u>Deployment</u></h2>
+<b>The following are the steps I went through to deploy my live site:</b>
+
+<p>The site was deployed with Heroku:</p>
+
+<li>Navigate to Heroku</li>
+<li>Go to 'New' and select 'Create a new app'</li>
+<li>Input your app name and create app</li>
+<li>Navigate to 'Settings'</li>
+<li>Install the needed buildpacks. Select Python and install and then node.js and install and then click save.</li>
+<li>Navigate to the 'Deploy' section.</li>
+<li>Connect to GitHub, search for your repo and confirm.</li>
+<li>Choose branch to deploy.</li>
+<li>The app is now."</li>
 
 <h2><u>Acknowledgments</u><h2>
-
-
-<p>This is a paragraph.</p>
+<p>Thank you tutor support!</p>
 
 </body>
 </html> 

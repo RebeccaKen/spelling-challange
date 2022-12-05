@@ -34,7 +34,7 @@ def main():
 
     while True:
         try:
-            num = int(input("Enter you age: "))
+            num = int(input("Enter you age:\n"))
             if num < 8:
                 print("This game may be a bit too hard for you.")
             elif num > 11:
