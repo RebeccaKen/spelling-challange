@@ -72,23 +72,25 @@ def main():
 
         letters_guessed += guess
 
+        test_answer = [x for x in secretWord if x in correct]
+        print(test_answer, "test answer")
+
         for letter in secretWord:
             if letter in letters_guessed:
                 print(f"{letter}", end=" ")
             if letter not in letters_guessed:
                 print("_", end=" ")
-
     # Check if player's guesses are all correct.
-            if len(correct) == len(secretWord):
-                print(f"You won! The answer was {secretWord}")
-                print("=====================================")
-                game_done = True
-                break
-            elif fail_count == 10:
-                print(f"You've run out of guesses. Answer = {secretWord}")
-                print("===================================================")
-                game_done = True
-                break
+        if len(test_answer) == len(secretWord):
+            print(f"You won! The answer was {secretWord}")
+            print("=====================================")
+            game_done = True
+            break
+        elif fail_count == 10:
+            print(f"You've run out of guesses. Answer = {secretWord}")
+            print("===================================================")
+            game_done = True
+            break
 
 # Restart game if user chooses to do so using main()
     restart = input("Start again? y for Yes, n for No:\n")
