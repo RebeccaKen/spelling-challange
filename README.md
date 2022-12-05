@@ -8,7 +8,8 @@
 <h1>Spelling Challange Game</h1>
 
 <img src="assets/images/website-mockup-image.jpg" alt="An-image-of-game-across-multiple-screens">
-<p></p>
+<br>
+<p>Welcome to Spelling Challange! Spelling Challenge was built for children between 8 – 11 to test their long vocabulary skills. This game was constructed using only python. Spelling Challenge allows kids to guess a letter of a random word. Each word is ten letters long. Because this is a game based around learning to spell, a player gets to have 7 wrong guesses during a single game. If they guess the word before running out of chances, they win! If not, they can restart the game and try again. It’s all about the effort!</p>
 
 <h2><u>Features</u></h2>
 <h3>Existing Features</h3>
@@ -73,9 +74,8 @@
 <br>
 <p>The guesses that the player has submitted prints on the same line as the restart question. I have attempted to resolve this bug by putting a line of print(‘-------------------‘) underneath the print statement that fills in the letters that have been guessed but it has been unsuccessful.</p>
 <br>
-<br>
-
 <h2><u>Credits</u></h2>
+<a href="/about/about_team.htm">team</a>
 <h2><u>Deployment</u></h2>
 <h2><u>Acknowledgments</u><h2>
 
