@@ -30,10 +30,10 @@
 <br>
 <br>
 <b>Issue:</b>
-<p>I discovered a bug in my code that resulted in print statements being printed multiple times in the terminal. This bug was attached to the code in the while loop that checks if the player’s guesses matches the answer. </p>
+<p>In order for the ‘Spelling Challenge’ to successfully work, the player’s guesses must be added and then compared to the answer (SecretWord). This code was not working as testing proved that a bug was stopping the player’s score from being compared to the answer. </p>
 <br>
 <b>Resolution:</b>
-<p>I resolved this bug by researching online. I eventually found some information of Stack Overflow on the nature of while loops.The bug was caused by the loop repeating because it didn’t have a break. I inserted two breaks into the while loop and the issue was resolved.</p>
+<p>The solution came along with the realisation that the current code was comparing a string to a list. Once the len() method was implemented on both the ‘correct’ list and the ‘secretWord’ string, the two could be successfully compared.</p>
 <br>
 <img src="assets/images/multi-line-bug.jpg" alt="An-image-of-bug-causing-multiple-prints">
 <br>
