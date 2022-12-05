@@ -19,14 +19,25 @@
 <br>
 <img src="assets/images/welcome-feature.jpg" alt="An-image-of-the-welcome-feature">
 <br>
-<p>The welcome feature welcomes the user to the game, asked for their name and greets the user by their name.</p>
+<p>The welcome feature welcomes the player to the game, asked for their name and greets the user by their name.</p>
 <br>
 <b>Enter Age</b>
 <br>
 <img src="assets/images/age-feature.jpg" alt="An-image-of-the-age-feature">
 <br>
-<p>The age feature asks the user their age, if they are between 8-11, the game proceeds. If they are not between 8-11, the terminal prints the game's age recommendation.</p>
-<h3>Existing Features</h3>
+<p>The age feature asks the player their age, if they are between 8-11, the game proceeds. If they are not between 8-11, the terminal prints the game's age recommendation.</p>
+<br>
+<b>Correct/Incorrect</b>
+<br>
+<img src="assets/images/validation-feature.jpg" alt="An-image-of-the-guess-validator-feature">
+<br>
+<p>The Correct/Incorrect tells the player if their guess was correct or incorrect. If correct, their guess is added to a list in the terminal</p>
+<br>
+
+
+
+
+
 <h2><u>Design</u></h2>
 
 <img src="assets/images/flow-chart-1.jpg" alt="An-image-of-the-spelling-challange-flowchart">
@@ -40,7 +51,6 @@
 <img src="assets/images/code-validated-image.jpg" alt="An-image-of-the-CI-Python-Linter">
 
 <h2><u>Bugs</u></h2>
-<h3>This section documents the bugs found in the 'Spelling Challange' code and how they were resolved<h3>
 <img src="assets/images/list-bug.jpg" alt="An-image-of-list-bug">
 <br>
 <br>
@@ -80,7 +90,6 @@
 <br>
 <br>
 <h2><u>Unresolved Bugs</u></h2>
-<h3>This section documents the bugs found in the 'Spelling Challange' code that have not been resolved<h3>
 <img src="assets/images/unresolved-bug.jpg" alt="An-image-of-unresolved-bug">
 <br>
 <br>
