@@ -6,12 +6,26 @@
 <body>
 
 <h1>Spelling Challange Game</h1>
-
+<br>
 <img src="assets/images/website-mockup-image.jpg" alt="An-image-of-game-across-multiple-screens">
 <br>
 <p>Welcome to Spelling Challange! Spelling Challenge was built for children between 8 – 11 to test their long vocabulary skills. This game was constructed using only python. Spelling Challenge allows kids to guess a letter of a random word. Each word is ten letters long. Because this is a game based around learning to spell, a player gets to have 7 wrong guesses during a single game. If they guess the word before running out of chances, they win! If not, they can restart the game and try again. It’s all about the effort!</p>
 
+<a href="https://spelling-challange.herokuapp.com/">Link to live Spelling Challange Game</a> 
+
 <h2><u>Features</u></h2>
+<br>
+<b>Welcome</b>
+<br>
+<img src="assets/images/welcome-feature.jpg" alt="An-image-of-the-welcome-feature">
+<br>
+<p>The welcome feature welcomes the user to the game, asked for their name and greets the user by their name.</p>
+<br>
+<b>Enter Age</b>
+<br>
+<img src="assets/images/age-feature.jpg" alt="An-image-of-the-age-feature">
+<br>
+<p>The age feature asks the user their age, if they are between 8-11, the game proceeds. If they are not between 8-11, the terminal prints the game's age recommendation.</p>
 <h3>Existing Features</h3>
 <h2><u>Design</u></h2>
 
