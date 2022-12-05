@@ -10,7 +10,7 @@ def main():
 
     def get_Name():
         '''This welcome Function collects player's name as an input.'''
-        response = input("Welcome to Spelling Challange!Please enter your name:\n")
+        response = input("Welcome to Spelling Challange! Enter your name:\n")
         return response
 
     name = get_Name()
@@ -34,13 +34,12 @@ def main():
         else:
             print("This game is recommended for children age 8 - 11!")
 
-
-    # Input validation method will be used to assure the player's name uses letters
+    # validation method will be used to assure the player's name uses letters
     if name.isalpha():
         print(f"Hello {name} it's nice to meet you" + "!")
         print("Ready to go?")
     elif name.isdigit():
-        print("Sorry, you can only to use letters only to spell your player name!")
+        print("Sorry, you can only to use letters!")
     else:
         print("You cannot use any special characters in player name.")
 
@@ -49,7 +48,6 @@ def main():
     fail_Count = 7
     letters_Guessed = " "
     game_Done = True
-
 
     # The following code was created using the tutorial
     # 'How to Build a Hangman Game with Python' by CBT Nuggets.
@@ -92,12 +90,13 @@ def main():
                 break
 
     # Restart game if user chooses to do so using main()
-    restart = input("Start again? y for Yes, n for NO: ")
+    restart = input("Start again? y for Yes, n for NO:\n")
     if restart == ("y"):
         incorrect = []
         incorrect = []
         main()
     else:
         quit()
+
 
 main()
