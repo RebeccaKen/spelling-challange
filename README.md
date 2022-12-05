@@ -46,6 +46,12 @@
 
 
 <h2><u>Technologies</u></h2>
+<br>
+<b>Lanuages:</b>
+<p>This could was created using only python</p>
+<br>
+<b>Tools and resouces:</b>
+<p>Gitpod, Github, Heroku, README.md template, Canva, Stack Overflow</p>
 <h2><u>Testing</u></h2>
 
 <img src="assets/images/code-validated-image.jpg" alt="An-image-of-the-CI-Python-Linter">
@@ -89,17 +95,39 @@
 <p>I went to tutor support for help investigating the issue. The tutor pointed out that part of the issue was that the ‘correct’ and ‘incorrect’ lists were not emptying when the game the game ended, because of this, the guesses from the last game were still counted. I added ‘correct = []’ and ‘incorrect = [ ]’ to the end of the restart function to reset the lists. That solved part of the issue. In the end, I opted to add a main() function to all the game code so it would restart when ‘y’ was selected by the player. </p>
 <br>
 <br>
+<b>Issue:</b>
+<br>
+<p>Spelling Challange required the user to take 10 guesses. This caused an issue if the player would win because it meant the player would have to enter ten guesses to win, so they would have to keep pressing 'enter' until the 'You Win' print message appeared</p>
+<br>
+<br>
+<img src="assets/images/guess-bug.jpg" alt="An-image-of-guess-bug">
+<br>
+<br>
+<b>Resolution:</b>
+<br>
+<p>I went on tutor support for help. My tutor Ger explained that another list would have to be created from the string of the secret word and checked against the correct answers, then the lengths could be.</p>
+<br>
 <h2><u>Unresolved Bugs</u></h2>
 <img src="assets/images/unresolved-bug.jpg" alt="An-image-of-unresolved-bug">
 <br>
 <br>
 <b>Issue:</b>
 <br>
-<p>The guesses that the player has submitted prints on the same line as the restart question. I have attempted to resolve this bug by putting a line of print(‘-------------------‘) underneath the print statement that fills in the letters that have been guessed but it has been unsuccessful.</p>
+<p>The list created from the string of the secretWord is called 'test answer'. The name of the list prints to the terminal. I tried changing the name and it broke that snippet of code.I have left it as it is in hopes that I can return to it when the course it finished.</p>
 <br>
 <h2><u>Credits</u></h2>
-<a href="/about/about_team.htm">team</a>
+<p>The structure of this code was inspired by code from www.inventwithpython.com</p>
+<a href = "https://inventwithpython.com/invent4thed/chapter8.html">'Chapter 8 - Writing the Hangman code'</a> 
+<br>
+<p>The code for the second while loop was inspired by CBT Nuggets on Youtube</p>
+<a href = "https://www.youtube.com/watch?v=JNXmCOumNw0&t=9s">'How to Build a Hangman Game with Python'</a> 
+<br>
+<p>The code for the def main() function is from MrLauLearning on YouTube</p>
+<a href = "https://www.youtube.com/watch?v=SZdQX4gbql0&t=175s">'Looping your code back to the beginning using a procedure'</a> 
+<br>
+
 <h2><u>Deployment</u></h2>
+
 <h2><u>Acknowledgments</u><h2>
 
 
