@@ -1,4 +1,7 @@
 def main():
+    """
+    Define main as a function to incase the rest of Spelling Challange code
+    """
 
     import random
 
@@ -23,24 +26,37 @@ def main():
         print("Please use letters!")
     else:
         print("You cannot use any special characters in player name.")
-        
+
     # This try/except statement will collect the player's age.
     # It then validates their input.
     # If the player is not between 8-11 a message
     # will appear to clarify the recommended player age.
 
+    while True:
+        try:
+            num = int(input("Enter you age: "))
+            if num < 8:
+                print("This game may be a bit too hard for you.")
+            elif num > 11:
+                print("This game may be too easy for you")
+            else:
+                print('This game is recommended for children of 8+!')
+                break
+
+        except ValueError:
+            print("Please enter a number")
+        
     correct = []
     incorrect = []
     game_Done = True
     fail_Count = 0
-    letterGuessed = ' '
-    secretWord = random.choice(words)
+    letters_Guessed = ' '
     guess = ' '
 
     # The following while loop code was created using the tutorial
     # 'How to Build a Hangman Game with Python' by CBT Nuggets.
-    
-    while fail_Count > 0:
+
+    while fail_Count < 10:
 
         print("===============================")
 
@@ -49,41 +65,39 @@ def main():
         if guess in secretWord:
             correct.append(guess)
             print(f"Correct! There is a {guess}")
-            fail_Count -= 1
-        else:
+        if guess not in secretWord:
             incorrect.append(guess)
             print(f"Incorrect! There is no {guess} in the answer.")
+            fail_Count += 1
 
-        letters_Guessed = letters_Guessed + guess
-        fail_Count = 0
+        letters_Guessed += guess
 
         for letter in secretWord:
             if letter in letters_Guessed:
                 print(f"{letter}", end=" ")
             if letter not in letters_Guessed:
                 print("_", end=" ")
-                fail_Count += 1
 
-        # Check if player's guesses are all correct.
+    # Check if player's guesses are all correct.
             if len(correct) == len(secretWord):
                 print(f"You won! The answer was {secretWord}")
                 print("=====================================")
                 game_Done = True
                 break
-            else:
+            elif fail_Count == 10:
                 print(f"You've run out of guesses. Answer = {secretWord}")
                 print("===================================================")
                 game_Done = True
                 break
 
+# Restart game if user chooses to do so using main()
+    restart = input("Start again? y for Yes, n for No:\n")
+    if restart == ("y"):
+        incorrect = []
+        correct = []
+        main()
+    else:
+        quit()
 
-        # Restart game if user chooses to do so using main()
-        restart = input("Start again? y for Yes, n for No:\n")
-        if restart == ("y"):
-           incorrect = []
-           correct = []
-           main()
-        else:
-            quit()
 
 main()
